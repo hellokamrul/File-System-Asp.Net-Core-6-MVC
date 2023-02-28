@@ -1,0 +1,46 @@
+﻿@model FileAssignment.Models.ViewModel.FileCreateModel
+
+@{
+    ViewData["Title"] = "Upload";
+}
+
+<h1>Create</h1>
+
+<h4>Document</h4>
+<hr />
+<div>
+    <div class="row">
+        <div class="col-md-12">
+            <form method="post" asp-for="Upload" enctype="multipart/form-data">
+                <div class="form-group">
+                    <span class="control-fileupload">
+                        <label asp-for="FilePath">Choose a file :</label>
+                        <input type="file" asp-for="FilePath"/>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <span class="control-fileupload">
+                        <label asp-for="FileName">File Name: </label>
+                        <input type="text" asp-for="FileName"/>
+                    </span>
+                </div>
+                
+                <hr />
+                <div class="form-group">
+                    <td>
+                        <input type="submit" class="btn btn-sm btn-primary float-right " value="Upload" />
+                    </td>
+                    <input type="button" class="btn btn-danger" value="Clear Selection" onclick="ClearSelection()" />
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+
